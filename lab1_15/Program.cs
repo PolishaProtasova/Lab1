@@ -8,35 +8,44 @@ namespace lab1_15
 {
     class A
     {
+        protected double[] x;
 
+        public double[] LinearEquation(double a, double b)
+        {
+            if (a == 0)
+                return null;
+
+            return x = new double[] { -b / a };   
+        }
     }
     class B : A
     {
-        public object a;
+        protected double Dis(double a, double b, double c)
+        {
+            return Math.Pow(b, 2) - 4 * a * c;            
+        }
+
+        public double[] QuadraticEquation(double a, double b, double c)
+        {
+            if (a == 0)
+                return LinearEquation(a, b);
+
+            double dis = Dis(a, b, c);
+            if (dis < 0)
+                return null;
+
+            if (dis == 0)
+                return x = new double[] { -b / (2 * a) };
+    
+            return x = new double[] { (-b + Math.Sqrt(dis)) / (2 * a) , (-b - Math.Sqrt(dis)) / (2 * a) };            
+        }
     }
-    class C : B
-    {
-        public object b;       
-    }
+
     class Program
     {
         static void Main(string[] args)
         {
-            A a1 = new A { };
-
-            B b2 = new B { };
-            b2.a = a1;
-
-            B b3 = new B { };
-            b3.a = a1;
-
-            C c4 = new C { };
-            c4.a = a1;
-            c4.b = b2;
-
-            C c5 = new C { };
-            c5.a = b3;
-            c5.b = c4;
+            Console.ReadKey();
         }
     }
 }
