@@ -4,13 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab1_15
+namespace lab1_15.core
 {
-    class Program
+    public interface LogInterface
     {
-        static void Main(string[] args)
-        {
-
-        }
+        LogInterface Log(string str);
+        LogInterface Write();
     }
 }

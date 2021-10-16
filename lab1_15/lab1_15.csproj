@@ -43,11 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="core\EquationInterface.cs" />
+    <Compile Include="core\LogAbstract.cs" />
+    <Compile Include="core\LogInterface.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Protasova\Linear.cs" />
+    <Compile Include="Protasova\ProtasovaLog.cs" />
+    <Compile Include="Protasova\Quadratic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

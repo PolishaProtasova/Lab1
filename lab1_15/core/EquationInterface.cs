@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace lab1_15
+namespace lab1_15.core
 {
-    class Program
+    public interface EquationInterface
     {
-        static void Main(string[] args)
-        {
-
-        }
+        List<float> Solve(float a, float b, float c);
     }
 }
