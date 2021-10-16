@@ -17,17 +17,24 @@ namespace lab1_15.Protasova
         public List<float> Solve(float a, float b, float c)
         {
             if (a == 0)
-                return new List<float> { Convert.ToSingle(LinearEquation(a, b)) };
+            {
+                ProtasovaLog.I().Log("Уравнение является линейным");
+                return LinearEquation(b, c);
+            }
 
             float dis = Dis(a, b, c);
+            ProtasovaLog.I().Log("Уравнение является квадратным");
+
             if (dis < 0)
-                return null;
-
+            {
+                throw new ProtasovaException("Уравнение не имеет решений");
+            }
             if (dis == 0)
-                return new List<float> { -b / (2 * a) };
+            {
+                return x = new List<float> { -b / (2 * a) };
+            }
 
-            x = new float[] { (float)(-b + Math.Sqrt(dis)) / (2 * a), (float)(-b - Math.Sqrt(dis)) / (2 * a) };
-            return new List<float> { Convert.ToSingle(x) };
+            return x = new List<float> { (float)(-b + Math.Sqrt(dis)) / (2 * a), (float)(-b - Math.Sqrt(dis)) / (2 * a) };
         }
     }
 }

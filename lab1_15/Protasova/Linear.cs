@@ -8,14 +8,16 @@ namespace lab1_15.Protasova
 {
     class Linear
     {
-        protected float[] x;
+        protected List<float> x;
 
-        public float[] LinearEquation(float a, float b)
+        public List<float> LinearEquation(float b, float c)
         {
-            if (a == 0)
-                return null;
+            if (b == 0)
+            {
+                throw new ProtasovaException("Уравнение не существует");
+            }
 
-            return x = new float[] { -b / a };
+            return x = new List<float> { -b / c };
         }
     }
 }

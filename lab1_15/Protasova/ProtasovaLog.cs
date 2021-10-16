@@ -32,5 +32,11 @@ namespace lab1_15.Protasova
             WriteConsole(list.ToArray());
             return this;
         }
+
+        public LogInterface Write(string v)
+        {
+            WriteConsole(v);
+            return this;
+        }
     }
 }
